@@ -1,4 +1,4 @@
-const commentInput = document.querySelector(".social__footer-text");
+// const commentInput = document.querySelector('.social__footer-text');
 // Функция для получения случайного числа взята с сайта https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 const getRandom = function (min, max) {
   if (min > max) {
@@ -19,3 +19,6 @@ let getCommentLength = function (currentLength, maxLength) {
     return false;
   }
 };
+
+getRandom();
+getCommentLength();
