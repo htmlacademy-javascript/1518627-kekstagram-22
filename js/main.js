@@ -1,3 +1,5 @@
-import { createPhotosList } from './create-photos.js';
+import { renderPictures } from './generate-picture.js';
 
-createPhotosList(25);
+renderPictures();
+
+
