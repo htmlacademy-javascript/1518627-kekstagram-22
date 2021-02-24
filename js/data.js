@@ -42,6 +42,10 @@ const createComment = function () {
   };
 };
 
+const createCommentsArray = function(max){
+  return new Array(getRandom(0,max)).fill(null).map(() => createComment());
+}
+
 const createPhoto = function (maxId) {
   let userId = getRandom(1, maxId);
   return {
@@ -49,7 +53,7 @@ const createPhoto = function (maxId) {
     url: getUrl(userId),
     description: PHOTO_DESCRIPTION[getRandom(0, PHOTO_DESCRIPTION - 1)],
     likes: getRandom(15, 200),
-    comments: createComment(3),
+    comments: createCommentsArray(10),
   };
 };
 
