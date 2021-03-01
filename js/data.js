@@ -57,4 +57,4 @@ const createPhoto = function (maxId) {
   };
 };
 
-export { createPhoto };
+export { createPhoto, createCommentsArray };
