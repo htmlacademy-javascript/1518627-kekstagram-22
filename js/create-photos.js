@@ -10,7 +10,9 @@ const createPhotosList = function (requiredQuantity) {
       usedId.push(oneCard.id);
     }
   }
+
   return cards;
 };
+
 
 export { createPhotosList };

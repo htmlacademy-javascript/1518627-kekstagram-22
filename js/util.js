@@ -19,4 +19,8 @@ const getCommentLength = function (currentLength, maxLength) {
   }
 };
 
-export { getRandom, getCommentLength };
+const isEscButton = function(evt){
+  return evt.key === ('Escape' || 'Esc');
+};
+
+export { getRandom, getCommentLength, isEscButton };
