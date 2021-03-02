@@ -14,14 +14,6 @@ document.addEventListener('drop', (evt) => evt.preventDefault());
 
 // функция,которая добавляет изображение на страницу,полученное от пользователя
 
-// const replaceImage = function (image) {
-//   const newImage = document.createElement('img');
-//   newImage.src = URL.createObjectURL(image);
-//   newImage.alt = 'Предварительный просмотр фотографии';
-//   imageContainer.append(newImage);
-//   URL.revokeObjectURL(newImage);
-// };
-
 
 function replaceImage() {
   let file = upload.files[0];
@@ -45,7 +37,6 @@ upload.addEventListener('change', function (evt) {
 });
 
 // обработчки при перетаскивании файла в зону загрузки
-
 // dropZone.addEventListener('drop', function (evt) {
 //   evt.preventDefault();
 //   overlay.classList.remove('hidden');
