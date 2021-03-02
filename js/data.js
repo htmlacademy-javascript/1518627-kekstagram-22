@@ -51,7 +51,7 @@ const createPhoto = function (maxId) {
   return {
     id: userId,
     url: getUrl(userId),
-    description: PHOTO_DESCRIPTION[getRandom(0, PHOTO_DESCRIPTION - 1)],
+    description: PHOTO_DESCRIPTION[getRandom(0, PHOTO_DESCRIPTION.length - 1)],
     likes: getRandom(15, 200),
     comments: createCommentsArray(10),
   };
