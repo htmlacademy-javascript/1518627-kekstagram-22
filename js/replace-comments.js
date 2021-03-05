@@ -1,5 +1,4 @@
 import { commentsArray } from './render-pictures.js';
-// import { getCommentLength } from './util.js';
 const commentsList = document.querySelector('.social__comments');
 const comment = commentsList.querySelector('li');
 

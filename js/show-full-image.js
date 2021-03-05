@@ -1,6 +1,6 @@
 import { isEscButton } from './util.js';
 import { replaceComments } from './replace-comments.js';
-import {  descriptionArray } from './render-pictures.js';
+import { descriptionArray } from './render-pictures.js';
 const pictures = document.querySelectorAll('.picture');
 const images = document.querySelectorAll('.picture .picture__img');
 const pictureComments = document.querySelectorAll('.picture .picture__comments');
@@ -24,16 +24,14 @@ const showFullImage = function () {
       fullImage.src = images[i].src;
       likes.innerHTML = pictureLikes[i].innerHTML;
       comments.innerHTML = pictureComments[i].innerHTML;
-      description.textContent =  descriptionArray[i];
+      description.textContent = descriptionArray[i];
       const currentComments = replaceComments(i);
       commentsList.innerHTML = '';
       commentsCount.classList.add('hidden');
       commentsloader.classList.add('hidden');
       commentsList.appendChild(currentComments);
-
     });
   }
-
 };
 
 closeModal.addEventListener('click', function () {
@@ -41,7 +39,8 @@ closeModal.addEventListener('click', function () {
   body.classList.remove('modal-open');
 });
 
-window.addEventListener('keydown', function (evt) {
+
+window.addEventListener('keydown', function(evt){
   if (isEscButton(evt)) {
     evt.preventDefault();
     fullImageOverlay.classList.add('hidden');
