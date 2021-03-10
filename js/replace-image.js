@@ -46,14 +46,17 @@ upload.addEventListener('change', function (evt) {
 
 // обработчкик для закрытия оверлея с помощью клика
 closeModal.addEventListener('click', function () {
-  overlay.classList.add('hidden'), body.classList.remove('modal-open');
+  overlay.classList.add('hidden'),
+  body.classList.remove('modal-open');
 });
+
 // обработчкик для закрытия оверлея с помощью esc
-window.addEventListener('keydown', function (evt) {
+const onEscButton = function (evt) {
   if (isEscButton(evt)) {
     evt.preventDefault();
     overlay.classList.add('hidden'), body.classList.remove('modal-open');
   }
-});
+};
+window.addEventListener('keydown', onEscButton);
 
-export { imageContainer, innerImage };
+export { imageContainer, innerImage, onEscButton };
