@@ -1,5 +1,4 @@
-import { isEscButton } from './util.js';
-
+import { onEscButtonOverlay, closeOverlay } from './util.js';
 const upload = document.querySelector('#upload-file');
 const body = document.querySelector('body');
 const overlay = document.querySelector('.img-upload__overlay');
@@ -13,7 +12,6 @@ document.addEventListener('dragover', (evt) => evt.preventDefault());
 document.addEventListener('drop', (evt) => evt.preventDefault());
 
 // функция,которая добавляет изображение на страницу,полученное от пользователя
-
 
 function replaceImage() {
   let file = upload.files[0];
@@ -45,18 +43,10 @@ upload.addEventListener('change', function (evt) {
 // });
 
 // обработчкик для закрытия оверлея с помощью клика
-closeModal.addEventListener('click', function () {
-  overlay.classList.add('hidden'),
-  body.classList.remove('modal-open');
-});
+
+closeModal.addEventListener('click', closeOverlay);
 
 // обработчкик для закрытия оверлея с помощью esc
-const onEscButton = function (evt) {
-  if (isEscButton(evt)) {
-    evt.preventDefault();
-    overlay.classList.add('hidden'), body.classList.remove('modal-open');
-  }
-};
-window.addEventListener('keydown', onEscButton);
+window.addEventListener('keydown', onEscButtonOverlay);
 
-export { imageContainer, innerImage, onEscButton };
+export { imageContainer, innerImage };

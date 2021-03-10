@@ -14,5 +14,4 @@ const createPhotosList = function (requiredQuantity) {
   return cards;
 };
 
-
 export { createPhotosList };
