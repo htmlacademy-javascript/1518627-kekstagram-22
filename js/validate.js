@@ -49,8 +49,12 @@ const checkHashtagInput = function (input) {
     if (error) {
       erorrsArray.push(error);
     }
+
   });
   error = erorrsArray.join(', ');
+  if(error){
+    hashtagInput.style.borderColor = 'red';
+  }
   return error;
 };
 // функции для проверки фокуса в поле хештега

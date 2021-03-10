@@ -1,4 +1,4 @@
-/* global noUiSlider:readonly */
+import { createSlider } from './util.js';
 import { imageContainer } from './replace-image.js'
 const sliderElement = document.querySelector('.effect-level__slider');
 const valueElement = document.querySelector('.effect-level__value');
@@ -21,18 +21,6 @@ const FILTER_SETTINGS = {
   empty: '',
 };
 
-// функция для создания слайдера
-const createSlider = function () {
-  noUiSlider.create(sliderElement, {
-    range: {
-      min: 0,
-      max: 1,
-    },
-    start: 0,
-    step: 0.1,
-    connect: 'lower',
-  });
-};
 let innerImage = imageContainer.querySelector('img');
 valueElement.value = 0;
 

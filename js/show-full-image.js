@@ -1,10 +1,6 @@
-import { isEscButton } from './util.js';
+import { closeOnEscOverlayPicture, closeOverlayPicture } from './util.js';
 import { replaceComments } from './replace-comments.js';
 import { descriptionArray } from './render-pictures.js';
-const pictures = document.querySelectorAll('.picture');
-const images = document.querySelectorAll('.picture .picture__img');
-const pictureComments = document.querySelectorAll('.picture .picture__comments');
-const pictureLikes = document.querySelectorAll('.picture .picture__likes');
 const fullImageOverlay = document.querySelector('.big-picture');
 const fullImage = document.querySelector('.big-picture__img > img');
 const closeModal = document.querySelector('.big-picture__cancel');
@@ -17,6 +13,10 @@ const commentsCount = document.querySelector('.social__comment-count');
 const commentsloader = document.querySelector('.comments-loader');
 
 const showFullImage = function () {
+  const images = document.querySelectorAll('.picture .picture__img');
+  const pictures = document.querySelectorAll('.picture');
+  const pictureLikes = document.querySelectorAll('.picture .picture__likes');
+  const pictureComments = document.querySelectorAll('.picture .picture__comments');
   for (let i = 0; i < pictures.length; i++) {
     images[i].addEventListener('click', function () {
       fullImageOverlay.classList.remove('hidden');
@@ -34,18 +34,9 @@ const showFullImage = function () {
   }
 };
 
-closeModal.addEventListener('click', function () {
-  fullImageOverlay.classList.add('hidden');
-  body.classList.remove('modal-open');
-});
+// функции для закрытия оверлей просмотра большой картинки
+closeModal.addEventListener('click', closeOverlayPicture);
 
+window.addEventListener('keydown', closeOnEscOverlayPicture);
 
-window.addEventListener('keydown', function(evt){
-  if (isEscButton(evt)) {
-    evt.preventDefault();
-    fullImageOverlay.classList.add('hidden');
-    body.classList.remove('modal-open');
-  }
-});
-
-showFullImage();
+export { showFullImage };
