@@ -37,7 +37,12 @@ const getRandom = function (min, max) {
 const isEscButton = function (evt) {
   return evt.key === ('Escape' || 'Esc');
 };
-
+// функция для создания элемента и присвоения ему класса;
+const createNewElement = function(tag, elementClass){
+  const newElement = document.createElement(tag);
+  newElement.classList.add(elementClass);
+  return newElement
+}
 // функция для создания слайдера
 const createSlider = function () {
   noUiSlider.create(sliderElement, {
@@ -55,13 +60,15 @@ createSlider();
 
 // функции для закрытия оверлея
 const closeOverlay = function () {
-  overlay.classList.add('hidden'), body.classList.remove('modal-open');
+  overlay.classList.add('hidden'),
+  body.classList.remove('modal-open');
 };
 
 const onEscButtonOverlay = function (evt) {
   if (isEscButton(evt)) {
     evt.preventDefault();
-    overlay.classList.add('hidden'), body.classList.remove('modal-open');
+    overlay.classList.add('hidden'),
+    body.classList.remove('modal-open');
   }
 };
 
@@ -172,6 +179,7 @@ export {
   closeOverlayPicture,
   closeOnEscOverlayPicture,
   showAlert,
+  createNewElement,
   args,
   failToGetAlert
 };
